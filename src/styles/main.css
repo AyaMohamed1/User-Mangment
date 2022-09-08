@@ -1,0 +1,19 @@
+.h-2 {
+  height: 2rem;
+}
+
+.dark-blue-bg {
+  background-color: rgb(10, 27, 47);
+  color: white;
+}
+
+.form-bg {
+  background-color: rgba(248, 250, 251, 255);
+}
+.white-bg {
+  background-color: white;
+}
+
+.white-text {
+  color: white;
+}
