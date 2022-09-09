@@ -13,7 +13,7 @@ import userCreateReducer from "./userCreateReducer";
 
 export default combineReducers({
   users: usersReducer,
-  userUpd: userUpdateReducer,
+  userUpdate: userUpdateReducer,
   userCreate: userCreateReducer,
   userDelete: userDeleteReducer,
 });

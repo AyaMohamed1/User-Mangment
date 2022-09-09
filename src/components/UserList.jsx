@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import NewUserForm from "./NewUserForm";
+import EditUser from "./EditUser";
 import {
   fetchUsers,
   selectUser,
@@ -19,26 +20,32 @@ class UsersList extends Component {
     //   email: "aya@aa.com",
     // });
 
-    this.props.userUpdate("631a10cc1318ef0e374fbd8b", {
-      firstName: "yoyaaaaaaaaa",
-      lastName: "Mohamed",
-    });
+    // this.props.userUpdate("631a10cc1318ef0e374fbd8b", {
+    //   firstName: "yoyaaaaaaaaa",
+    //   lastName: "Mohamed",
+    // });
   }
   render() {
-    console.log(this.props);
-
+    // console.log(this.props);
     const usersList = this.props.users.map((user, index) => (
       <tr key={index}>
         <th>{user.id}</th>
         <td>{user.firstName}</td>
         <td>{user.lastName}</td>
-        <td>{user.title}</td>
-        <td>{user.picture}</td>
+        {/* <td>{user.title}</td>
+        <td>{user.picture}</td> */}
         <td>
+          <EditUser
+            id={user.id}
+            firstName={user.firstName}
+            lastName={user.lastName}
+          />
           <button
             type="button"
             className="btn btn-primary"
-            onClick={() => this.props.selectUser(user)}
+            data-bs-toggle="modal"
+            data-bs-target={`#edit-${user.id}`}
+            // onClick={() => this.props.EditUser(user.id)}
           >
             Select
           </button>
@@ -63,15 +70,14 @@ class UsersList extends Component {
             </button>
           </div>
         </div>
-
         <table className="table table-hover border">
           <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">First</th>
               <th scope="col">Last</th>
-              <th scope="col">Title</th>
-              <th scope="col">Picture</th>
+              {/* <th scope="col">Title</th>
+              <th scope="col">Picture</th> */}
               <th scope="col">Select</th>
             </tr>
           </thead>
